@@ -206,6 +206,8 @@ Polymer('g-spectrogram', {
   },
 
   onStream: function(stream) {
+    console.log(context);
+    if (context) {
     var input = context.createMediaStreamSource(stream);
     var analyser = context.createAnalyser();
     analyser.smoothingTimeConstant = 0;
@@ -217,6 +219,7 @@ Polymer('g-spectrogram', {
     this.analyser = analyser;
     // Setup a timer to visualize some stuff.
     this.render();
+  }
   },
 
   onStreamError: function(e) {
@@ -235,7 +238,7 @@ Polymer('g-spectrogram', {
     var hue = fromH + delta;
     return 'hsl(H, 100%, 50%)'.replace(/H/g, hue);
   },
-  
+
   logChanged: function() {
     if (this.labels) {
       this.renderAxesLabels();
