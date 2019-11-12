@@ -22,13 +22,14 @@
       if (context==null) {
       var AudioContext = window.AudioContext || window.webkitAudioContext || window.mozAudioContext;
       context = new AudioContext();
-      document.getElementById("start").innerHTML = "<g-spectrogram ></g-spectrogram>"
+      document.getElementById("start").innerHTML = "<g-spectrogram style='z-index: 0' ></g-spectrogram><div class='test'><img src='img.png'></div>";
     }
     }
     </script>
     <style>
 .test {
   text-align: center;
+  z-index: 20000;
 }
 </style>
   </head>
