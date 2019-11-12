@@ -22,7 +22,7 @@
       if (context==null) {
       var AudioContext = window.AudioContext || window.webkitAudioContext || window.mozAudioContext;
       context = new AudioContext();
-      document.getElementById("start").innerHTML = "<g-spectrogram style='z-index: 0' ></g-spectrogram><div class='test'><img src='imgTransV2.png'></div>";
+      document.getElementById("start").innerHTML = "<g-spectrogram style='z-index: 0' ></g-spectrogram><br>&nbsp&nbsp&nbsp<span class='text'> sound art by Mathias Rossignol @ LONOFI.COM </span><br><div class='test'><img src='imgTransV2.png'></div>";
     }
     }
     </script>
@@ -31,9 +31,14 @@
   text-align: center;
   z-index: 20000;
 }
+.text{
+  font-family: 'Inconsolata';
+}
 </style>
   </head>
-  <body   id="start" onload="initWebaudio();">
+  <body   id="start" onload="initWebaudio();" >
+    <br>
+    &nbsp&nbsp&nbsp <span class="text"> sound art by Mathias Rossignol @ LONOFI.COM </span>
 <div class="test">
   <img src='imgTransV2.png'>
 </div>
