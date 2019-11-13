@@ -16,14 +16,21 @@
       console.log("Evènement");
       context = null;
     };
-
+ var toggle = false;
     function start()
     {
+        console.log(toggle);
       if (context==null) {
       var AudioContext = window.AudioContext || window.webkitAudioContext || window.mozAudioContext;
       context = new AudioContext();
-      document.getElementById("start").innerHTML = "<g-spectrogram style='z-index: 0' ></g-spectrogram><br>&nbsp&nbsp&nbsp<span class='text'> sound art by Mathias Rossignol @ LONOFI.COM </span><br><div class='test'><img src='imgTransV2.png'></div>";
     }
+      if (toggle) {
+          document.getElementById("start").innerHTML = "<g-spectrogram style='z-index: 0' ></g-spectrogram>";
+      }
+      else {
+          toggle = true;
+          document.getElementById("start").innerHTML = "<g-spectrogram style='z-index: 0' ></g-spectrogram><br>&nbsp&nbsp&nbsp<span class='text'> sound art by Mathias Rossignol @ LONOFI.COM </span><br><div class='test'><img src='imgTransV2.png'></div>";
+      }
     }
     </script>
     <style>
@@ -38,7 +45,7 @@
   </head>
   <body   id="start" onload="initWebaudio();" >
     <br>
-    &nbsp&nbsp&nbsp <span class="text"> sound art with LONOFI.COM </span>
+    &nbsp&nbsp&nbsp <span class="text"> sound art by Mathias Rossignol @ LONOFI  </span>
 <div class="test">
   <img src='imgTransV2.png'>
 </div>
